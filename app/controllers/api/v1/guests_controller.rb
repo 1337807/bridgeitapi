@@ -2,11 +2,10 @@ class Api::V1::GuestsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def index
-    render json: Guest.all
+    render json: {}
   end
 
   def show
-    render json: Guest.find(params[:id])
   end
 
   def create
@@ -14,11 +13,9 @@ class Api::V1::GuestsController < ApplicationController
   end
 
   def update
-    render json: Guest.update(params[:id], guest_params)
   end
 
   def destroy
-    render json: Guest.destroy(params[:id])
   end
 
   private
